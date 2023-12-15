@@ -1,26 +1,34 @@
 export const DATA_CATEGORY_HEADER=[
     {
-        name: "truyen 1",
+        name: "Tất cả",
         slug: "/truyen/truyen1"
     },
     {
-        name: "truyen 2",
+        name: "Huyền Nguyễn",
         slug: "/truyen/truyen1"
     },
     {
-        name: "truyen 3",
+        name: "Đô Thị",
         slug: "/truyen/truyen1"
     },
     {
-        name: "truyen 4",
+        name: "Võng Phu",
         slug: "/truyen/truyen1"
     },
     {
-        name: "truyen 5",
+        name: "Kiếm Hiệp",
         slug: "/truyen/truyen1"
     },
     {
-        name: "truyen 6",
+        name: "Dã Sử",
+        slug: "/truyen/truyen1"
+    },
+    {
+        name: "Huyền Nghi",
+        slug: "/truyen/truyen1"
+    },
+    {
+        name: "Kì Ảo",
         slug: "/truyen/truyen1"
     },
 ]
@@ -49,4 +57,74 @@ export const CHARTS=[
         nameChar: "Thảo Luận",
         slugChar: "/truyen/truyen1"
     },
+]
+
+
+
+
+
+
+
+export const STORULIST = [
+    {
+        getName : "Truyện Chữ",
+        getSlug: "/truyen/truyen2"
+    },
+    
+    {
+        getName : "Truyện Chữ Online",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Chữ Hay",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Tranh",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Tranh Online",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Ngôn Tình",
+        getSlug: "/truyen/truyen2"
+    },
+     {
+        getName : "Truyện Tranh",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Top Đầu",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Tự Tiên",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Xích Ma",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Ngôn Tình",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Tranh Hay",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Mới Nhất",
+        getSlug: "/truyen/truyen2"
+    },
+    {
+        getName : "Truyện Vừa Cập Nhật",
+        getSlug: "/truyen/truyen2"
+    },
+
+
+   
+
 ]

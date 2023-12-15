@@ -1,13 +1,15 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
-import Link from "next/link";
-import Header from "@/components/Partials/Header";
-import { useEffect, useState } from "react";
+
+import Outstending from "@/components/modules/Home/Outstending";
+import LatestUpdate from "@/components/modules/Home/LatestUpdate";
+import HighRated from "@/components/modules/Home/HightRated";
+import LatestRated from "@/components/modules/Home/LatestRated";
+import SliderUpdate from "@/components/modules/Home/slider";
+import MainLayout from "@/components/Layouts/MainLayout";
 import axios from "axios";
+import Completed from "@/components/modules/Home/Completed";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home({ repo }) {
+export default function HomePage({ repo, evaluate, review, novels, justs ,posteds}) {
   // console.log(repo)
 
   // const [list, getlist] = useState([]);
@@ -27,168 +29,140 @@ export default function Home({ repo }) {
   //   Handle();
   // }, []);
 
-  const [Evaluate, getEvaluate] = useState([]);
-  // async muon dung awai thi de trong async
-  const HandleEvaluate = async () => {
-    try {
-      // await doi de load du lieu tu sevr ve
-      // axios de lay du lieu ve
-      const novelsEvaluate = await axios.get(
-        "https://hobanovel-be.azurewebsites.net/api/novels/get/highlyrated?page=1"
-      );
+  // const [Evaluate, getEvaluate] = useState([]);
+  // // async muon dung awai thi de trong async
+  // const HandleEvaluate = async () => {
+  //   try {
+  //     // await doi de load du lieu tu sevr ve
+  //     // axios de lay du lieu ve
+  //     const novelsEvaluate = await axios.get(
+  //       "https://hobanovel-be.azurewebsites.net/api/novels/get/highlyrated?page=1"
+  //     );
 
-      getEvaluate(novelsEvaluate.data.novels);
-    } catch {}
-  };
+  //     getEvaluate(novelsEvaluate.data.novels);
+  //   } catch {}
+  // };
 
-  useEffect(() => {
-    HandleEvaluate();
-  }, []);
-  
-  const [review, getReview] = useState([]);
+  // useEffect(() => {
+  //   HandleEvaluate();
+  // }, []);
 
-  const HandleReview = async()=>{
-    try{
-      const novelsReview = await axios.get("https://hobanovel-be.azurewebsites.net/api/reviews/get?page=1");
+  // const [review, getReview] = useState([]);
 
-  
-      getReview(novelsReview.data.reviews)
-    }catch{}
-    
-  };
+  // const HandleReview = async () => {
+  //   try {
+  //     const novelsReview = await axios.get(
+  //       "https://hobanovel-be.azurewebsites.net/api/reviews/get?page=1"
+  //     );
 
-  useEffect(()=>{
-    HandleReview()
-  },[]);
-  const [body, getBody] = useState([]);
-  // async muon dung awai thi de trong async
-  const HandleBody = async () => {
-    try {
-      // await doi de load du lieu tu sevr ve
-      // axios de lay du lieu ve
-      const novelsResBody = await axios.get(
-        "https://hobanovel-be.azurewebsites.net/api/novels/search-by-page/1"
-      );
-      getBody(novelsResBody.data.novels);
-    } catch {}
-  };
+  //     getReview(novelsReview.data.reviews);
+  //   } catch {}
+  // };
 
-  useEffect(() => {
-    HandleBody();
-  }, []);
+  // useEffect(() => {
+  //   HandleReview();
+  // }, []);
+
+  // const [novels, getBody] = useState([]);
+  // // async muon dung awai thi de trong async
+  // const HandleBody = async () => {
+  //   try {
+  //     // await doi de load du lieu tu sevr ve
+  //     // axios de lay du lieu ve
+  //     const novelsResBody = await axios.get(
+  //       "https://hobanovel-be.azurewebsites.net/api/novels/search-by-page/1"
+  //     );
+  //     getBody(novelsResBody.data.novels);
+  //   } catch {}
+  // };
+
+  // useEffect(() => {
+  //   HandleBody();
+  // }, []);
   return (
     <div>
-      <Header></Header>
-      <div className="  mt-40 mb-2 grid md:grid-cols-2   bg-gray-100 rounded-xl max-w-[1000px] mx-auto w-full">
-        {repo &&
-          repo.map((item, index) => {
-            return (
-              <div key={index} className="flex my-4 ml-4">
-                <Image
-                  width={80}
-                  height={112}
-                  alt="ảnh"
-                  src={item.thumbnailUrl}
-                  className="w-20 h-24  object-cover"
-                />
-                <div>
-                  <h3 className="px-8  ">{item.title}</h3>
-                  <b className="px-8 mb-2">{item.author}</b>
-                </div>
-              </div>
-            );
-          })}
+      {/* <Header></Header> */}
+      <div>
+        <Image
+          width={1200}
+          height={240}
+          alt="anh nen"
+          src={`https://res.cloudinary.com/djrbd6ftt/image/upload/v1695023561/hobanovel/admin/banners/1695023559557.webp`}
+          className="w-full"
+        />
       </div>
-
-      <div className=" max-w-[1000px] w-full mx-auto md:block hidden">
-        <span className="font-bold uppercase text-[18px]">
-          Truyện Mới Cập Nhật
-        </span>
-        <table className="border-4 mt-2 mb-2">
-          {body.map((itemBody, indexBody) => {
-            return (
-              <tr key={indexBody}>
-                <td className="w-1/12">
-                  <p className="line-clamp-1">Huyền Nguyễn</p>
-                </td>
-                <td className="w-1/5">
-                  <b className="line-clamp-1">{itemBody.title}</b>
-                </td>
-                <td className="w-1/5">
-                  <b className="line-clamp-1">{itemBody.title}</b>
-                </td>
-                <td className="w-1/12">
-                  <p className="line-clamp-1">Văn Hiên Vũ</p>
-                </td>
-                <td className="w-1/12">
-                  <p className="line-clamp-1">Nguyễn Hoàng Bảo</p>
-                </td>
-              </tr>
-            );
-          })}
-        </table>
-      </div>
-      <div className="flex max-w-[1000px] mx-auto w-full">
-        <div>
-          <span className="text-[18px] font-bold uppercase">Truyện Đánh Giá Cao</span>
-          <div className="mt-2 mb-14 grid md:grid-cols-2 ml-0  bg-gray-50 rounded-xl max-w-[700px] mx-auto w-full">
-            {Evaluate.map((item, index) => {
-              return (
-                <div key={index} className="flex my-4 ml-4">
-                  <Image
-                    width={80}
-                    height={112}
-                    alt="ảnh"
-                    src={item.thumbnailUrl}
-                    className="w-20 h-24  object-cover"
-                  />
-                  <div>
-                    <h3 className="px-2 font-semibold line-clamp-1">{item.title}</h3>
-                    <div className="bg-red-600  px-2 w-10 h-7 ml-2 rounded-md text-white">{item.mediumScore}</div>
-                    <div className="px-2 line-clamp-2">{item.description && item?.description.replace(/<[^>]+>/g, '')}</div>
-                  </div>
-     
-                </div>
-              );
-            })}
+      <div className=" -translate-y-16 max-w-[1000px] mx-auto w-full">
+        <div className="flex bg-gray-50  rounded-xl">
+          <Outstending repo={repo} />
+          <div className="mb-8 mt-2 ml-5 lg:block hidden">
+            <h2 className="uppercase font-bold">
+              <span>Truyện Đang Đọc</span>
+            </h2>
+            <div>
+              <span>Bạn Chưa Đăng Nhập! </span>
+              <a className="text-blue-800">Đăng Nhập Ngay</a>
+            </div>
           </div>
         </div>
-
         <div>
-          <span className="font-bold uppercase ml-3  text-[18px] ">
-            Mới Đánh Giá
-          </span>
-          {
-              review.map((itemReview, index )=>{
-                return ( 
-                  <ul key={index} className="p-4 rounded bg-gray-100 m-3">
-                    <li className="font-semibold">{itemReview.name }</li>
-                    <li className="bg-red-600 p-[1px] text-center w-14 rounded-md ">{itemReview.mediumScore}</li>
-                    <li className="font-semibold">{itemReview.title}</li>
-                    
-                  </ul>
-
-                );
-              }) 
-            }
+          <LatestUpdate novels={novels} />
+        </div>
+        <div className="flex ">
+          <HighRated evaluate={evaluate} />
+          <LatestRated review={review} />
+        </div>
+        <div className="grid grid-cols-12 ">
+          <div className="col-span-3 bg-gray-100 px-3 rounded-xl ">
+            <SliderUpdate posteds={posteds}/>
+          </div>
+          <div className="ml-10 col-span-9 ">
+            <Completed justs={justs}/>
+            </div>
         </div>
       </div>
     </div>
   );
 }
 
+HomePage.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
+
 export const getStaticProps = async (context) => {
   const res = await fetch(
     "https://hobanovel-be.azurewebsites.net/api/novels/get/outstanding"
   );
+  const value = await fetch(
+    "https://hobanovel-be.azurewebsites.net/api/novels/get/highlyrated?page=1"
+  );
+  const react = await fetch(
+    "https://hobanovel-be.azurewebsites.net/api/reviews/get?page=1"
+  );
 
+  const novel = await fetch(
+    "https://hobanovel-be.azurewebsites.net/api/novels/search-by-page/1"
+  );
+  const just = await fetch(
+    "https://hobanovel-be.azurewebsites.net/api/novels/search-by-page/1"
+  );
+  const posted = await fetch(
+    "https://hobanovel-be.azurewebsites.net/api/novels/get/outstanding"
+  );
   const repo = await res.json();
-  return { props: { repo: repo.novels }, revalidate: 60 };
+  const evaluate = await value.json();
+  const review = await react.json();
+  const novels = await novel.json();
+  const justs = await just.json();
+  const posteds = await posted.json();
+  return {
+    props: {
+      repo: repo?.novels || null,
+      evaluate: evaluate?.novels || null,
+      review: review?.reviews || null,
+      novels: novels?.novels || null,
+      justs: justs?.novels || null,
+      posteds: posteds?.novels || null,
+    },
+    revalidate: 60,
+  };
 };
-
-// export const getStaticProp = (async (context) =>{
-//   const Evaluate = await fetch('https://hobanovel-be.azurewebsites.net/api/novels/get/highlyrated?page=1')
-
-//   const getEvaluate = await Evaluate.json()
-//   return { props: { getEvaluate: getEvaluate.novels }, revalidate: 60 };
-// })
