@@ -9,8 +9,8 @@ const LatestUpdate = ({ novels }) => {
         <table className="border-4 mt-2 mb-2">
           {novels.map((itemBody, indexBody) => {
             return (
-              <tbody>
-                <tr key={indexBody}>
+              <tbody key={indexBody}>
+                <tr >
                   <td className="w-1/12">
                     <p className="line-clamp-1">Huyền Nguyễn</p>
                   </td>
