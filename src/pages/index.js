@@ -9,7 +9,14 @@ import MainLayout from "@/components/Layouts/MainLayout";
 import axios from "axios";
 import Completed from "@/components/modules/Home/Completed";
 
-export default function HomePage({ repo, evaluate, review, novels, justs ,posteds}) {
+export default function HomePage({
+  repo,
+  evaluate,
+  review,
+  novels,
+  justs,
+  posteds,
+}) {
   // console.log(repo)
 
   // const [list, getlist] = useState([]);
@@ -91,7 +98,7 @@ export default function HomePage({ repo, evaluate, review, novels, justs ,posted
           className="w-full"
         />
       </div>
-      <div className=" -translate-y-16 max-w-[1000px] mx-auto w-full">
+      <div className=" md:-translate-y-16 max-w-[1000px] mx-auto w-full">
         <div className="flex bg-gray-50  rounded-xl">
           <Outstending repo={repo} />
           <div className="mb-8 mt-2 ml-5 lg:block hidden">
@@ -108,16 +115,20 @@ export default function HomePage({ repo, evaluate, review, novels, justs ,posted
           <LatestUpdate novels={novels} />
         </div>
         <div className="flex ">
-          <HighRated evaluate={evaluate} />
-          <LatestRated review={review} />
+          <div>
+            <HighRated evaluate={evaluate} />
+          </div>
+          <div className="md:block hidden">
+            <LatestRated review={review} />
+          </div>
         </div>
         <div className="grid grid-cols-12 ">
-          <div className="col-span-3 bg-gray-100 px-3 rounded-xl ">
-            <SliderUpdate posteds={posteds}/>
+          <div className="md:block hidden col-span-3 bg-gray-100 px-3  rounded-xl ">
+            <SliderUpdate posteds={posteds} />
           </div>
-          <div className="ml-10 col-span-9 ">
-            <Completed justs={justs}/>
-            </div>
+          <div className="md:ml-10 col-span-9 ">
+            <Completed justs={justs} />
+          </div>
         </div>
       </div>
     </div>

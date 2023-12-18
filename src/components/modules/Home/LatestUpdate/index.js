@@ -1,3 +1,5 @@
+
+
 const LatestUpdate = ({ novels }) => {
   return (
     <div>

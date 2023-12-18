@@ -5,8 +5,8 @@ import { CHARTS } from "@/lib/constant";
 const Header = () => {
   return (
     <header>
-      <div className="w-full bg-gray-200 p-2">
-        <div className=" max-w-3xl w-full mx-auto flex space-x-7">
+      <div className=" w-full bg-gray-100 p-2">
+        <div className=" max-w-[1000px] w-full mx-auto flex space-x-7">
           <div>
             <p className="font-bold text-2xl cursor-pointer">hobannovel</p>
           </div>

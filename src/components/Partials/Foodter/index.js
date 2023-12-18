@@ -5,7 +5,7 @@ const Foodter = () => {
   return (
     <header>
       <hr></hr>
-      <div className="flex max-w-[1000px] mx-auto w-full mb-32 mt-4  ">
+      <div className="md:flex block max-w-[1000px] mx-auto w-full mb-32 mt-4  ">
         <div>
           <div className="p-2">
             <h1 className="font-semibold text-2xl">
@@ -20,7 +20,7 @@ const Foodter = () => {
           </div>
         </div>
         <div>
-          <div className=" mt-2 ml-20 ">
+          <div className=" mt-2 md:ml-20 ">
             <p className="text-xl">Từ Khóa</p>
             <ul className="grid grid-cols-4 ">
               {STORULIST.map((item, index) => {
