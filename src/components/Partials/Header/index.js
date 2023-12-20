@@ -8,7 +8,9 @@ const Header = () => {
       <div className=" w-full bg-gray-100 p-2">
         <div className=" max-w-[1000px] w-full mx-auto flex space-x-7">
           <div>
-            <p className="font-bold text-2xl cursor-pointer">hobannovel</p>
+            <Link href={"/"}>
+              <p className="font-bold text-2xl cursor-pointer">hobannovel</p>
+            </Link>
           </div>
           <div className="relative dropdown cursor-pointer">
             <p className="">Thể Loại</p>

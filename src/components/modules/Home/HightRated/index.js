@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const HighRated = ({ evaluate }) => {
   return (
@@ -20,7 +21,7 @@ const HighRated = ({ evaluate }) => {
                 />
                 <div>
                   <h3 className="px-2 font-semibold line-clamp-1">
-                    {item.title}
+                    <Link href={`/truyen/${item.slug}`}>{item.title}</Link>
                   </h3>
                   <div className="bg-red-600  px-2 w-10 h-7 ml-2 rounded-md text-white text-center">
                     {item?.mediumScore || "5.0"}
@@ -29,7 +30,6 @@ const HighRated = ({ evaluate }) => {
                     {item.description &&
                       item?.description.replace(/<[^>]+>/g, "")}
                   </div>
-                  
                 </div>
               </div>
             );

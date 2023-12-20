@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 const LatestUpdate = ({ novels }) => {
   return (
@@ -12,12 +12,16 @@ const LatestUpdate = ({ novels }) => {
           {novels.map((itemBody, indexBody) => {
             return (
               <tbody key={indexBody}>
-                <tr >
+                <tr>
                   <td className="w-1/12">
                     <p className="line-clamp-1">Huyền Nguyễn</p>
                   </td>
                   <td className="w-1/5">
-                    <b className="line-clamp-1">{itemBody.title}</b>
+                    <b className="line-clamp-1">
+                      <Link href={`/truyen/${itemBody.slug}`}>
+                      {itemBody.title}
+                      </Link>
+                      </b>
                   </td>
                   <td className="w-1/5">
                     <b className="line-clamp-1">{itemBody.title}</b>

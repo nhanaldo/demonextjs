@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Completed = ({ justs }) => {
   return (
@@ -18,7 +19,8 @@ const Completed = ({ justs }) => {
                 />
                 <div>
                   <h3 className="px-2 font-semibold line-clamp-1">
-                    {item.title}
+                    <Link href={`/truyen/${item.slug}`} >{item.title}</Link>
+                    
                   </h3>
                   <div className="flex">
                     <p className="px-2 mt-2 mb-2 text-sm line-clamp-1 w-1/2">{item.author}</p>
