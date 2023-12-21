@@ -3,6 +3,7 @@ import Header from "../Partials/Header";
 
 
 const MainLayout = ({ children }) => {
+  
   return (
     <div >
       <Header />
