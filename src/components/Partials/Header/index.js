@@ -19,7 +19,7 @@ const Header = () => {
             <button onClick={() => getShowTyle(!showTyle)}>The Loai</button>
             {showTyle && (
               <div className="absolute ">
-                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[120px] shadow-lg rounded-b-md grid grid-cols-2">
+                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[170px]  h-24 shadow-lg rounded-b-md grid grid-cols-2">
                   {/* <li className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 1</li>
                                 <li  className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 2</li>
                                 <li  className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 4</li>
@@ -31,7 +31,7 @@ const Header = () => {
                     return (
                       <li
                         key={index}
-                        className="hover:bg-gray-100 line-clamp-1 md:px-3 px-2 md:py-2  cursor-pointer"
+                        className="hover:bg-gray-100 line-clamp-1 md:px-3 px-2 py-1 md:py-2 text-center cursor-pointer"
                       >
                         <Link href={item.slug}>{item.name}</Link>
                       </li>
@@ -51,12 +51,12 @@ const Header = () => {
             </button>
             {showHan && (
               <div className="absolute ">
-                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[130px] shadow-lg rounded-b-md grid grid-cols-2">
+                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[130px] h-14 shadow-lg rounded-b-md grid grid-cols-2">
                   {CHARTS.map((item, index) => {
                     return (
                       <li
                         key={index}
-                        className="hover:bg-gray-100 line-clamp-1 md:px-3 px-2 md:py-2  cursor-pointer"
+                        className="hover:bg-gray-100  line-clamp-1 md:px-3 px-2 md:py-2  text-center cursor-pointer"
                       >
                         <Link href={item.slugChar}>{item.nameChar}</Link>
                       </li>
