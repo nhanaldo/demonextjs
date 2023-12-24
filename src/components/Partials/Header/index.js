@@ -19,7 +19,7 @@ const Header = () => {
             <button onClick={() => getShowTyle(!showTyle)}>The Loai</button>
             {showTyle && (
               <div className="absolute ">
-                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[170px]  h-24 shadow-lg rounded-b-md grid grid-cols-2">
+                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[170px]   max-w-3xl:h-24 shadow-lg rounded-b-md grid grid-cols-2">
                   {/* <li className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 1</li>
                                 <li  className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 2</li>
                                 <li  className="hover:bg-gray-100 px-3 py-2 cursor-pointer">Truyen 4</li>
@@ -51,7 +51,7 @@ const Header = () => {
             </button>
             {showHan && (
               <div className="absolute ">
-                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[130px] h-14 shadow-lg rounded-b-md grid grid-cols-2">
+                <ul className="bg-white md:w-80 md:text-lg text-[10px] md:py-2 md:px-2 w-[130px] max-w-3xl:h-14 shadow-lg rounded-b-md grid grid-cols-2">
                   {CHARTS.map((item, index) => {
                     return (
                       <li

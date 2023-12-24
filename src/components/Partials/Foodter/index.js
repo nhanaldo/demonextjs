@@ -9,7 +9,7 @@ const Foodter = () => {
         <div>
           <div className="p-2">
             <h1 className="font-semibold text-2xl">
-              <a>Hobannovel</a>
+              <Link href={'/'}>Hobannovel</Link>
             </h1>
           </div>
           <div className="p-2">

@@ -8,6 +8,8 @@ import SliderUpdate from "@/components/modules/Home/slider";
 import MainLayout from "@/components/Layouts/MainLayout";
 import axios from "axios";
 import Completed from "@/components/modules/Home/Completed";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function HomePage({
   repo,
@@ -17,6 +19,19 @@ export default function HomePage({
   justs,
   posteds,
 }) {
+  const [goToStop, getGoToStop] = useState(false)
+
+  useEffect(()=>{
+
+    const handelScroll = () =>{
+      if(window.scrollY >= 200){
+        getGoToStop(true)
+      }else{
+        getGoToStop(false)
+      }
+    }
+    window.addEventListener('scroll', handelScroll)
+  },[])
   // console.log(repo)
 
   // const [list, getlist] = useState([]);
@@ -131,6 +146,12 @@ export default function HomePage({
           </div>
         </div>
       </div>
+
+      {goToStop && (
+        <Link className="md:block hidden fixed right-5 bottom-48" href={"/"}>
+          Home
+        </Link>
+      )}
     </div>
   );
 }
